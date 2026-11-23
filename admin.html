@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabor Amor - Acceso Administrador</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Estilos para el Login y el Panel */
+        .login-container { max-width: 400px; margin: 100px auto; padding: 40px; background: white; border-radius: 20px; box-shadow: 0 8px 20px rgba(144, 202, 249, 0.2); border: 1px solid #e3f2fd; text-align: center; }
+        .login-container h2 { color: #1976D2; margin-bottom: 20px; }
+        
+        .admin-container { max-width: 800px; margin: 30px auto; padding: 30px; background: white; border-radius: 20px; box-shadow: 0 8px 20px rgba(144, 202, 249, 0.2); border: 1px solid #e3f2fd; display: none; /* Oculto por defecto */ }
+        
+        .form-group { margin-bottom: 15px; text-align: left; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: 600; color: #333; }
+        .form-group input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-family: 'Poppins', sans-serif; }
+        
+        .btn-guardar { background-color: #FFCA28; color: #0D47A1; padding: 12px; border: none; border-radius: 8px; cursor: pointer; width: 100%; font-size: 16px; font-weight: 700; transition: 0.3s; margin-top: 10px;}
+        .btn-guardar:hover { background-color: #FFD54F; transform: scale(1.02); }
+        
+        #error-login { color: #d32f2f; font-size: 14px; margin-top: 10px; display: none; }
+        
+        table { width: 100%; margin-top: 30px; border-collapse: collapse; }
+        th, td { border-bottom: 1px solid #eee; padding: 12px; text-align: left; }
+        th { background-color: #f0f8ff; color: #1976D2; font-weight: 600; }
+        .btn-eliminar { background-color: #ff4d4d; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; transition: 0.3s; }
+        .btn-eliminar:hover { background-color: #cc0000; }
+        
+        .btn-salir { background-color: transparent; color: #d32f2f; border: 1px solid #d32f2f; padding: 8px 15px; border-radius: 5px; cursor: pointer; float: right; margin-bottom: 20px; }
+    </style>
+
+    <!-- Configuración básica y SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sabor Amor Repostería: Postres artesanales, tortas personalizadas y sabores únicos en La Plata y Pitalito, Huila.">
+    <meta name="theme-color" content="#218387">
+
+    <!-- Open Graph (Para que se vea bonito al compartir en WhatsApp/Facebook) -->
+    <meta property="og:title" content="Sabor Amor - Repostería Artesanal">
+    <meta property="og:description" content="Endulzamos los momentos más especiales con postres artesanales y tortas personalizadas.">
+    <meta property="og:image" content="img/hero.jpeg">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon (El ícono en la pestaña del navegador) -->
+    <link rel="icon" type="image/png" href="img/logo.png">
+
+</head>
+<body>
+    <header>
+        <h1>Panel de Administración</h1>
+        <p>Gestiona el inventario de Sabor Amor</p>
+    </header>
+
+    <!-- PANTALLA DE LOGIN -->
+    <div id="login-container" class="login-container">
+        <h2>🔒 Acceso Restringido</h2>
+        <p style="color: #666; margin-bottom: 20px; font-size: 14px;">Ingresa tus credenciales de administrador</p>
+        <form id="login-form">
+            <div class="form-group">
+                <label for="usuario">Usuario:</label>
+                <input type="text" id="usuario" required placeholder="Ej: admin">
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" required placeholder="••••••••">
+            </div>
+            <button type="submit" class="btn-guardar">Ingresar al Sistema</button>
+            <p id="error-login">Usuario o contraseña incorrectos.</p>
+        </form>
+    </div>
+
+    <!-- PANEL DE ADMINISTRACIÓN (Oculto por defecto) -->
+    <div id="admin-panel" class="admin-container">
+        <button id="btn-salir" class="btn-salir">Cerrar Sesión</button>
+        <h2>Agregar Nuevo Postre</h2>
+        
+        <form id="form-producto">
+
+    <div class="form-group">
+        <label for="nombre">Nombre del Producto:</label>
+        <input
+            type="text"
+            id="nombre"
+            required
+            placeholder="Ej: Torta Cholupa">
+
+
+
+    </div>
+
+    <div class="form-group">
+        
+    </div>
+
+    <div class="form-group">
+
+        <label for="categoria-postre">
+            Categoría:
+        </label>
+
+        <select id="categoria-postre">
+
+            <option value="Tortas">Tortas</option>
+
+            <option value="Postres">Postres</option>
+
+            <option value="Ponques">Ponqués</option>
+
+            <option value="Especiales">Especiales</option>
+
+        </select>
+
+    </div>
+
+    <div class="form-group">
+
+        <label for="descripcion-postre">
+            Descripción:
+        </label>
+
+        <textarea
+            id="descripcion-postre"
+            rows="4"
+            placeholder="Describe este producto">
+        </textarea>
+
+    </div>
+
+    <div class="form-group">
+        <label for="imagen">Subir Foto del Producto:</label>
+
+        <input
+            type="file"
+            id="imagen"
+            accept="image/*"
+            required
+            style="padding: 8px; background: #f9f9f9;">
+    </div>
+
+    <button
+        type="submit"
+        class="btn-guardar">
+
+        Guardar Producto
+
+    </button>
+
+
+</form>
+<h2 style="margin-top: 40px;">
+    Productos en el Catálogo
+</h2>
+
+<table>
+
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Categoría</th>
+            <th>Tipo</th>
+            <th>Acción</th>
+        </tr>
+    </thead>
+
+    <tbody id="tabla-productos">
+
+    </tbody>
+
+</table>
+
+<div style="text-align: center; margin-top: 30px;">
+    <a href="index.html" style="color: #1976D2; font-weight: 600; text-decoration: none;">
+        ← Volver a la Tienda
+    </a>
+</div>
+
+</div>
+
+<!-- 1. Cargamos los productos fijos -->
+<script src="js/data.js"></script>
+
+<!-- 2. Cargamos admin.js -->
+<script type="module" src="js/admin.js"></script>
+
+</body>
+</html>
