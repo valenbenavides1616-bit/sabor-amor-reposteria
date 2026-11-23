@@ -2,7 +2,6 @@
    SISTEMA DE DISEÑO (Variables)
    ========================== */
 :root {
-    /* Colores de marca */
     --color-principal: #218387;
     --color-principal-oscuro: #1a6b6e;
     --color-acento: #E4CA3A;
@@ -10,16 +9,12 @@
     --color-cielo: #51bacc;
     --color-oscuro: #2B3440;
     --color-footer: #3490a9;
-
-    /* Colores de apoyo */
     --color-blanco: #ffffff;
     --color-fondo: #f8fafb;
     --color-fondo-suave: #eef5f7;
     --color-texto: #333333;
     --color-texto-suave: #666666;
     --color-whatsapp: #25D366;
-
-    /* Sombras y transiciones */
     --sombra-suave: 0 10px 30px rgba(33, 131, 135, 0.1);
     --sombra-media: 0 15px 40px rgba(33, 131, 135, 0.15);
     --sombra-fuerte: 0 20px 50px rgba(33, 131, 135, 0.2);
@@ -117,7 +112,6 @@ body {
     box-shadow: 0 6px 20px rgba(33, 131, 135, 0.3);
 }
 
-/* Botón Hamburguesa */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -143,12 +137,8 @@ body {
 /* --- HERO --- */
 .hero {
     min-height: 100vh;
-    background: linear-gradient(
-        135deg,
-        rgba(33, 131, 135, 0.85) 0%,
-        rgba(81, 186, 204, 0.75) 100%
-    ),
-    url("../img/hero.jpeg");
+    background: linear-gradient(135deg, rgba(33, 131, 135, 0.85) 0%, rgba(81, 186, 204, 0.75) 100%),
+                url("img/hero.jpeg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -504,33 +494,6 @@ body {
     border: 2px solid #FFE082;
 }
 
-.btn-agregar {
-    background: linear-gradient(135deg, var(--color-acento) 0%, var(--color-acento-oscuro) 100%);
-    color: white;
-    border: none;
-    padding: 14px 30px;
-    border-radius: 35px;
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
-    margin: 0 20px;
-    transition: var(--transicion);
-    box-shadow: 0 5px 15px rgba(228, 202, 58, 0.4);
-}
-
-.btn-agregar:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 25px rgba(228, 202, 58, 0.5);
-}
-
-.btn-agregar:disabled {
-    background: #e0e0e0;
-    color: #888;
-    box-shadow: none;
-    cursor: not-allowed;
-    transform: none;
-}
-
 .btn-detalles {
     width: 85%;
     margin: 15px auto;
@@ -550,7 +513,6 @@ body {
     box-shadow: 0 8px 20px rgba(33, 131, 135, 0.4);
 }
 
-/* Modal */
 .modal-producto {
     display: none;
     position: fixed;
@@ -848,7 +810,7 @@ body {
     box-shadow: 0 12px 35px rgba(228, 202, 58, 0.4);
 }
 
-/* --- CARRITO FLOTANTE (UNIFICADO) --- */
+/* --- CARRITO FLOTANTE --- */
 .carrito-oculto {
     display: none !important;
 }
@@ -947,13 +909,6 @@ body {
     border-top: 2px solid #E4CA3A;
     width: 100%;
     text-align: center;
-}
-
-#carrito-flotante p {
-    margin-bottom: 20px;
-    font-weight: 700;
-    font-size: 1.15rem;
-    color: var(--color-principal);
 }
 
 #btn-enviar-whatsapp {
@@ -1113,10 +1068,4 @@ footer a:hover {
     .cta-subtitulo { font-size: 1.2rem; }
     .cta-descripcion { font-size: 1rem; }
     .btn-cta-whatsapp { padding: 15px 35px; font-size: 1.1rem; }
-}
-
-.info-card p {
-    color: #555;
-    font-size: 1rem;
-    line-height: 1.6;
 }
